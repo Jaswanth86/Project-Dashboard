@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Dashboard</h2>
+                <button id="toggleMenu" class="toggle-menu">☰</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" data-section="dashboard" class="active">Dashboard</a></li>
+                <li><a href="#" data-section="products">Products</a></li>
+                <li><a href="#" data-section="analytics">Analytics</a></li>
+                <li><a href="#" data-section="settings">Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input">
+                </div>
+                <div class="user-info">
+                    <span>Welcome, User</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <div id="dashboard-section" class="content-section active">
+                <!-- Graph Section -->
+                <section class="graph-section">
+                    <h2>Sales Analytics</h2>
+                    <div class="chart-container">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- Table Section -->
+                <section class="table-section">
+                    <h2>Products Overview</h2>
+                    <div class="add-product-form">
+                        <input type="text" id="productName" placeholder="Product Name">
+                        <input type="text" id="category" placeholder="Category">
+                        <input type="number" id="price" placeholder="Price">
+                        <input type="number" id="stock" placeholder="Stock">
+                        <button id="addProduct">Add Product</button>
+                    </div>
+                    <div class="table-container">
+                        <table id="productsTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Product Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Table data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Products Detail Section -->
+            <div id="products-section" class="content-section">
+                <h2>Product Details</h2>
+                <div class="product-categories">
+                    <div class="category-filters">
+                        <button class="category-btn active" data-category="all">All</button>
+                        <button class="category-btn" data-category="Electronics">Electronics</button>
+                        <button class="category-btn" data-category="Clothing">Clothing</button>
+                        <button class="category-btn" data-category="Home Appliances">Home Appliances</button>
+                        <button class="category-btn" data-category="Footwear">Footwear</button>
+                        <button class="category-btn" data-category="Fitness">Fitness</button>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <!-- Product cards will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Analytics Section -->
+            <div id="analytics-section" class="content-section">
+                <h2>Detailed Analytics</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Revenue Overview</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Category Distribution</h3>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Stock Levels</h3>
+                        <canvas id="stockChart"></canvas>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Key Metrics</h3>
+                        <div class="metrics-grid">
+                            <!-- Metrics will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings-section" class="content-section">
+                <h2>Settings</h2>
+            </div>
+        </main>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
