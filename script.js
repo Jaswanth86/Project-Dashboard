@@ -138,8 +138,8 @@ function renderProducts() {
             <td>${product.category}</td>
             <td>$${product.price.toFixed(2)}</td>
             <td>${product.stock}</td>
-            <td>
-                <button onclick="showProductDetails(${product.id})" class="view-btn">View</button>
+            <td class=act>
+                Active
             </td>
         `;
         tbody.appendChild(row);
