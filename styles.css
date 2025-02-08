@@ -156,6 +156,9 @@ th {
     background-color: #f8f9fa;
     font-weight: 600;
 }
+.act{
+    color:green;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
